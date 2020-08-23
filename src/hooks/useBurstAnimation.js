@@ -40,7 +40,7 @@ const useBurstAnimation = ({ duration: tlDuration, burstEl }) => {
         fill: '#65aae6',
         delay: 10,
         speed: 5,
-        radius: 20,
+        radius: 5,
         easing: mojs.easing.bezier(-0.1, -1, 0.3, 3),
       },
     });
