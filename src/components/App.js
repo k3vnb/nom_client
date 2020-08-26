@@ -1,6 +1,6 @@
 /* eslint-disable camelcase */
 /* eslint-disable no-plusplus */
-import React, { Component } from 'react';
+import React, { PureComponent } from 'react';
 import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import isEmpty from 'lodash.isempty';
 import config from '../config';
@@ -37,7 +37,7 @@ import PrivacyPolicy from './TermsAndConditions/PrivacyPolicy';
 import NotFoundPage from './NotFoundPage/NotFoundPage';
 import './App.css';
 
-export default class App extends Component {
+export default class App extends PureComponent {
   constructor(props) {
     super(props);
     this.state = {

@@ -24,6 +24,7 @@ const VoteButtons = ({ userDidLike, restaurantId, likeId }) => {
     <div className="buttons-container flex-container--centered">
       <button
         type="button"
+        aria-label="Vote for this restaurant"
         className={
           userDidLike ? 'upvote-btn vote-btn hide' : 'upvote-btn vote-btn'
         }
@@ -33,6 +34,7 @@ const VoteButtons = ({ userDidLike, restaurantId, likeId }) => {
       </button>
       <button
         ref={buttonRef}
+        aria-label="Undo your vote for this restaurant"
         type="button"
         className={
           !userDidLike
