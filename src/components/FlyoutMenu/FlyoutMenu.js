@@ -84,6 +84,7 @@ const FlyoutMenu = () => {
     <>
       <Button
         ref={anchorRef}
+        aria-label="toggle menu"
         aria-controls={open ? 'menu-list-grow' : undefined}
         aria-haspopup="true"
         onClick={handleToggle}
@@ -132,7 +133,11 @@ const FlyoutMenu = () => {
                       </MenuItem>
                     ))}
                     <MenuItem key="new" onClick={handleClose}>
-                      <Button variant="contained" color="primary">
+                      <Button
+                        aria-label="add new restaurant"
+                        variant="contained"
+                        color="primary"
+                      >
                         <Link
                           size="small"
                           style={{

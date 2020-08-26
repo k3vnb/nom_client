@@ -33,9 +33,9 @@ const RestaurantPreview = ({
         >
           <div className="restaurant-preview-card--left restaurant-preview-card--section">
             <Link to={`/category/${category}/${restaurantId}`}>
-              <h5>{name}</h5>
+              <h4>{name}</h4>
             </Link>
-            <h6>{subtitle}</h6>
+            <h5>{subtitle}</h5>
           </div>
           <div className="restaurant-preview-card--middle restaurant-preview-card--section flex-container--centered">
             {voteCount}
