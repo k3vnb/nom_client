@@ -9,7 +9,7 @@ import React, {
 } from 'react';
 import { useHistory } from 'react-router-dom';
 import { Button, TextField } from '@material-ui/core';
-import { uuid } from 'uuidv4';
+import { v4 as uuidv4 } from 'uuid';
 import { string, func } from 'prop-types';
 import config from '../../config';
 import NomsContext from '../../NomsContext';
@@ -94,7 +94,8 @@ const SearchRestaurantsForm = ({
   };
 
   const handleOnFocus = () => {
-    setGoogleSessionId(uuid());
+    const uid = uuidv4();
+    setGoogleSessionId(uid);
     toggleFloatingSearchResults();
   };
 
