@@ -244,9 +244,13 @@ export default class App extends PureComponent {
     );
   };
 
-  proceedUndoVoteForRestaurant = (userId, restaurantId, likesCommentsId) => {
+  proceedUndoVoteForRestaurant = async (
+    userId,
+    restaurantId,
+    likesCommentsId
+  ) => {
     const { voteTallies, likesAndComments } = this.state;
-    this.addEditComment(likesCommentsId, '', restaurantId);
+    await this.addEditComment(likesCommentsId, '', restaurantId);
     deleteUpvote(userId, restaurantId).then((confirmation) => {
       if (confirmation.error) {
         return this.handleShowFeedbackSnackbar(confirmation.message);
@@ -265,6 +269,7 @@ export default class App extends PureComponent {
 
   addEditComment = async (commentId, updatedComment, restaurantId) => {
     const { user, likesAndComments } = this.state;
+
     const confirmation = await patchComment(
       commentId,
       updatedComment,
